@@ -8,7 +8,7 @@ function obtenerIdiomas($conexion){
 }
 function obtenerIdiomasPornombre($conexion,$nombre){
 
-    $sql = "SELECT * FROM language LIKE '%$nombre%'";
+    $sql = "SELECT * FROM language WHERE name LIKE '%$nombre%'";
     return  mysqli_query($conexion,$sql);
 
 }

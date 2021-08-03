@@ -2,14 +2,10 @@
 require_once "modelos/modelo_actor.php";
 
 $pagina = "Actores";
-$nombre = $_GET['nombre'] ?? "";
-$query = "SELECT * FROM actor WHERE first_name LIKE '%$nombre%'";
-$resultado = mysqli_query($conexion, $query);
 
-$actor = obtenerActores($conexion);
+$actores = obtenerActores($conexion);
 
 if(isset($_POST['insertar'])){
-
     $nom = $_POST['nom'] ?? "";
     $apellido = $_POST['apellido'] ?? "";
 

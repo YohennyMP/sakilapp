@@ -33,12 +33,12 @@ include_once "partes/menu.php"; ?>
             </thead>
             <tbody class="larger shadow">
             <?php
-            while($dato = mysqli_fetch_assoc($resultado)){
+            while($dato = mysqli_fetch_assoc($actores)){
                 echo "<tr>
-                    <th scope='row'>{$dato[actor_id]}</th>
-                    <th>{$dato[first_name]}</th>
-                    <th>{$dato[last_name]}</th>
-                    <th class='overflow-hidden ml-5 mr-5'>{$dato[last_update]}
+                    <th scope='row'>{$dato['actor_id']}</th>
+                    <th>{$dato['first_name']}</th>
+                    <th>{$dato['last_name']}</th>
+                    <th class='overflow-hidden ml-5 mr-5'>{$dato['last_update']}
                         <i class='fa fa-close p-2 ml-5 justify-content-end border rounded border-primary text-white bg-primary'></i>
                         <i class='fa fa-pencil p-2 ml-1 border rounded border-primary text-white bg-primary'></i>
                     </th>

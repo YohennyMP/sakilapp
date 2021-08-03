@@ -1,14 +1,15 @@
 <?php 
 include_once "conexion.php";
+
 function obtenerActores($conexion){
-    
+
     $query = "SELECT * FROM actor";
-    return $query;
+    return mysqli_query($conexion,$query);
 
 }
 function obtenerActoresporNombre($conexion, $nombre){
     
-    $query = "SELECT * FROM actor where LIKE '%$nombre%'";
+    $query = "SELECT * FROM actor where first_name LIKE '%$nombre%'";
     return mysqli_query($conexion,$query);
 
 }

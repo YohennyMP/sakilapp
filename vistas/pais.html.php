@@ -24,6 +24,7 @@ include_once "vistas/partes/menu.php"; ?>
                 <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
                 <button name= "buscar" class="btn btn-default" type="submit"><i class="bi bi-search px-2"></i>Buscar</button>
             </form>
+            <div><?php echo $_SESSION['mensaje'] ?? ""; ?></div>
         </div>
     </div>
         <div class="container bg-default">

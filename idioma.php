@@ -6,7 +6,7 @@ $nombre = $_GET['nombre'] ?? "";
 $query = "SELECT * FROM language WHERE name LIKE '%$nombre%'";
 $resultado = mysqli_query($conexion, $query);
 
-$actor = obtenerIdiomas($conexion);
+$idioma = obtenerIdiomas($conexion);
 
 if(isset($_POST['guardar'])){
 

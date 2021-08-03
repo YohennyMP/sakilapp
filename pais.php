@@ -5,10 +5,13 @@ $pagina = "Paises";
 
 $paises = obtenerPaises($conexion);
 
-if(isset($_POST['buscar'])){
-    $nombre = $_POST['nombre'] ?? "";
-    $actores = obtenerPaisesporNombre($conexion,$nombre);
+if(isset($_GET['buscar'])){
+    $nombre = $_GET['nombre'] ?? "";
+    $paises = obtenerPaisesporNombre($conexion,$nombre);
+
+    var_dump($paises);
 }
+
 if(isset($_POST['insertar'])){
     
     $pais = $_POST['pais'] ?? "";

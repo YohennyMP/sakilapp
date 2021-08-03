@@ -14,10 +14,7 @@ include_once "vistas/partes/menu.php"; ?>
                 <h1 class="text-center fw-bold animate__animated animate__bounce animate__repeat-3">actores</h1>
             </div>
             <form class="py-5" action="actor.php" method="post">
-                <input type="text" name="actor_id" class="form-control my-1" placeholder="codigo de actor">
-                <input type="text" name="nom" class="form-control my-1" placeholder="nombre">
-                <input type="text" name="apellido" class="form-control my-1" placeholder="apelllido">
-                <input type="date" name="ult_edicion" class="form-control my-1">
+                <input type="text" name="actor_id" class="form-control my-1" placeholder="Idioma">
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" name="insertar"><i class="bi bi-save px-2"></i>Guardar</button>
                 </div>
@@ -26,6 +23,7 @@ include_once "vistas/partes/menu.php"; ?>
                 <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
                 <button name= "buscar" class="btn btn-default" type="submit"><i class="bi bi-search px-2"></i>Buscar</button>
             </form>
+            <div><?php echo $_SESSION['mensaje'] ?? ""; ?></div>
         </div>
     </div>
         <div class="container bg-default">
@@ -34,17 +32,15 @@ include_once "vistas/partes/menu.php"; ?>
             <thead class="thead thead-primary text-dark text-capitalize">
             <th scope='col' class="">codigo</th>
             <th scope='col' class="">nombre</th>
-            <th scope='col' class="">apellido</th>
             <th scope='col' class="">fecha</th>
             </thead>
             <tbody class="larger shadow">
             <?php
             while($dato = mysqli_fetch_assoc($resultado)){
                 echo "<tr>
-                    <th scope='row'>{$dato[actor_id]}</th>
-                    <th>{$dato[first_name]}</th>
-                    <th>{$dato[last_name]}</th>
-                    <th class='overflow-hidden'>{$dato[last_update]}
+                    <th scope='row'>{$dato['language_id']}</th>
+                    <th>{$dato['name']}</th>
+                    <th class='overflow-hidden'>{$dato['last_update']}
                         <i class='bi bi-x p-2 border rounded border-primary text-white bg-primary'></i>
                         <i class='bi bi-pencil p-2  border rounded border-primary text-white bg-primary'></i>
                     </th>
