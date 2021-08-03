@@ -1,6 +1,6 @@
 <?php 
-include_once "vistas/partes/head.php";
-include_once "vistas/partes/menu.php"; ?>
+include_once "partes/head.php";
+include_once "partes/menu.php"; ?>
 <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -8,27 +8,21 @@ include_once "vistas/partes/menu.php"; ?>
             <div></div>
         </div>
     </div> 
-    <div class="banner">
-        <div class="container text-capitalize col-md-12 w-75 p-5 larger shadow bg-light h-100 shadow-lg p-3 mb-5 bg-white rounded">
-            <div class="text-center">
-                <h1 class="text-center fw-bold animate__animated animate__bounce animate__repeat-3">actores</h1>
-            </div>
-            <form class="py-5" action="actor.php" method="post">
-                <input type="text" name="actor_id" class="form-control my-1" placeholder="codigo de actor">
+    <div class="banner h-100">
+        <div class=" container text-capitalize col-md-8 w-75 p-5 larger shadow h-100 shadow-lg rounded">
+            <h1 class=" text-center text-white fw-bold animate__animated animate__bounce animate__repeat-3 p-3">actores</h1>
+            <form class="" action="actor.php" method="post">
                 <input type="text" name="nom" class="form-control my-1" placeholder="nombre">
                 <input type="text" name="apellido" class="form-control my-1" placeholder="apelllido">
-                <input type="date" name="ult_edicion" class="form-control my-1">
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary" name="insertar"><i class="bi bi-save px-2"></i>Guardar</button>
-                </div>
+                <button type="submit" class="btn btn-primary" name="insertar"><i class="bi bi-save pl-2"></i>Guardar</button>
             </form>
             <form class="h-25" action="actor.php" method="get">
                 <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-                <button name= "buscar" class="btn btn-default" type="submit"><i class="bi bi-search px-2"></i>Buscar</button>
+                <button name= "buscar" class="btn btn-primary my-1" type="submit"><i class="bi bi-search pl-2"></i>Buscar</button>
             </form>
         </div>
     </div>
-        <div class="container bg-default">
+        <div class="container">
         <hr>
         <table class="col-md-12 text-center table table-striped larger shadow">
             <thead class="thead thead-primary text-dark text-capitalize">
@@ -44,9 +38,9 @@ include_once "vistas/partes/menu.php"; ?>
                     <th scope='row'>{$dato[actor_id]}</th>
                     <th>{$dato[first_name]}</th>
                     <th>{$dato[last_name]}</th>
-                    <th class='overflow-hidden'>{$dato[last_update]}
-                        <i class='bi bi-x p-2 border rounded border-primary text-white bg-primary'></i>
-                        <i class='bi bi-pencil p-2  border rounded border-primary text-white bg-primary'></i>
+                    <th class='overflow-hidden ml-5 mr-5'>{$dato[last_update]}
+                        <i class='fa fa-close p-2 ml-5 justify-content-end border rounded border-primary text-white bg-primary'></i>
+                        <i class='fa fa-pencil p-2 ml-1 border rounded border-primary text-white bg-primary'></i>
                     </th>
                 </tr>";
             }

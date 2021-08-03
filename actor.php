@@ -8,17 +8,24 @@ $resultado = mysqli_query($conexion, $query);
 
 $actor = obtenerActores($conexion);
 
-if(isset($_GET['buscar'])){
-    $nombre = $_GET['nombre'] ?? "";
-    $actores = obtenerActoresporNombre($conexion,$nombre);
-}
 if(isset($_POST['insertar'])){
-    $codigoActor = $_GET['actor_id'] ?? "";
-    $nom = $_GET['nom'] ?? "";
-    $apellido = $_GET['apellido'] ?? "";
-    $ultEdicion = $_GET['ult_edicion'] ?? "";
-    $data = $conexion.','.$codigoActor.','.$nom.','.$apellido.','.$ultEdicion;
-    echo $data;
-    $act = insertarActor($conexion,$data);
+
+    $nom = $_POST['nom'] ?? "";
+    $apellido = $_POST['apellido'] ?? "";
+
+    $data = compact('nom', 'apellido');
+
+    $insertado = insertarActor($conexion,$data);
+
+    if($insertado){
+        $_SESSION['mensaje'] = 'Insercion correcta';
+    }
+}
+if(isset($_GET['buscar'])){
+
+    $nombre = $_GET['nombre'] ?? "";
+    
+    $actores = obtenerActoresporNombre($conexion,$nombre);
+
 }
 require_once "vistas/actores.html.php";

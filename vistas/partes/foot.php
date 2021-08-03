@@ -1,10 +1,9 @@
 <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/accordions.js"></script>
+
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
@@ -16,6 +15,19 @@
           }
       }
     </script>
-
+    <style>
+    footer{
+      background-image: url(assets/images/footer-bg.jpg);
+    }
+    </style>
+    <footer>
+      <div class="text-white text-center text-uppercase">
+      <h3>visita nuestras redes sociales</h3>
+      <i class="fa fa-facebook p-3"><a href="#"></a></i>
+      <i class="fa fa-instagram p-3"><a href="#"></a></i>
+      <i class="fa fa-twitter p-3"><a href="#"></a></i>
+    </div>
+    <p class="col-md-12 text-white text-center text-capitalize">todos los derechos reservados &copy</p>
+    </footer>
   </body>
 </html>
