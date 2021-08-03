@@ -24,4 +24,3 @@ function borrarActor($conexion, $nombre){
 function actualizarActor($conexion, $nombre){
     //codigo
 }
-include_once "../vistas/actores.html.php";

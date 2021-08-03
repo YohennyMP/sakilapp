@@ -19,4 +19,3 @@ function insertarIdioma($conexion,$data){
     return mysqli_query($conexion,$sql);
 
 }
-include_once "../vistas/idioma.html.php";
