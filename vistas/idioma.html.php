@@ -1,50 +1,52 @@
 <?php 
-include_once "partes/head.php";
-include_once "partes/menu.php"; ?>
-    <div id="preloader">
+include_once "vistas/partes/head.php";
+include_once "vistas/partes/menu.php"; ?>
+<div id="preloader">
         <div class="jumper">
             <div></div>
             <div></div>
             <div></div>
         </div>
     </div> 
-      <div class="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 offset-md-2">
-              <div class="header-text caption text-white">
-                <form action="" method="post">
-                  <input class="form-control my-2" placeholder="idioma" type="text" name="idioma" id="">
-                  <button name="guardar" class="btn btn-primary my-2" type="submit"><i class="fa fa-save mr-2">Guardar</i></button>
-                </form>
-                <form action="" method="get">
-                  <input class="form-control my-2" placeholder="buscar" type="text" name="nombre" id="">
-                  <button class="btn btn-primary my-2" type="submit"><i class="fa fa-search mr-2" name="buscar"></i>Buscar</button>
-                </form>
-              </div>
+    <div class="banner">
+        <div class="container text-capitalize col-md-12 w-75 p-5 larger shadow bg-light h-100 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="text-center">
+                <h1 class="text-center fw-bold animate__animated animate__bounce animate__repeat-3">actores</h1>
             </div>
-          </div>
+            <form class="py-5" action="actor.php" method="post">
+                <input type="text" name="actor_id" class="form-control my-1" placeholder="codigo de actor">
+                <input type="text" name="nom" class="form-control my-1" placeholder="nombre">
+                <input type="text" name="apellido" class="form-control my-1" placeholder="apelllido">
+                <input type="date" name="ult_edicion" class="form-control my-1">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" name="insertar"><i class="bi bi-save px-2"></i>Guardar</button>
+                </div>
+            </form>
+            <form class="h-25" action="actor.php" method="get">
+                <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                <button name= "buscar" class="btn btn-default" type="submit"><i class="bi bi-search px-2"></i>Buscar</button>
+            </form>
         </div>
-      </div>
     </div>
-    </div>
-    <div class="container">
+        <div class="container bg-default">
         <hr>
         <table class="col-md-12 text-center table table-striped larger shadow">
             <thead class="thead thead-primary text-dark text-capitalize">
-            <th scope='col' class="">codigo idioma</th>
-            <th scope='col' class="">idioma</th>
-            <th scope='col' class="">ultima modificacion</th>
+            <th scope='col' class="">codigo</th>
+            <th scope='col' class="">nombre</th>
+            <th scope='col' class="">apellido</th>
+            <th scope='col' class="">fecha</th>
             </thead>
             <tbody class="larger shadow">
             <?php
             while($dato = mysqli_fetch_assoc($resultado)){
                 echo "<tr>
-                    <th scope='row'>{$dato[language_id]}</th>
-                    <th>{$dato[name]}</th>
-                    <th class='overflow-hidden ml-5 mr-5'>{$dato[last_update]}
-                        <i class='fa fa-close p-2 ml-5 justify-content-end border rounded border-primary text-white bg-primary'></i>
-                        <i class='fa fa-pencil p-2 ml-1 border rounded border-primary text-white bg-primary'></i>
+                    <th scope='row'>{$dato[actor_id]}</th>
+                    <th>{$dato[first_name]}</th>
+                    <th>{$dato[last_name]}</th>
+                    <th class='overflow-hidden'>{$dato[last_update]}
+                        <i class='bi bi-x p-2 border rounded border-primary text-white bg-primary'></i>
+                        <i class='bi bi-pencil p-2  border rounded border-primary text-white bg-primary'></i>
                     </th>
                 </tr>";
             }
@@ -52,5 +54,4 @@ include_once "partes/menu.php"; ?>
             </tbody>
         </table>
     </div>
-    </div>
-<?php include_once "vistas/partes/foot.php"; ?>
+<?php include_once "partes/foot.php";?>
