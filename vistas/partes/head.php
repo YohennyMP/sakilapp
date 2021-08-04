@@ -18,3 +18,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+<?php
+include_once "vistas/partes/menu.php"; ?>
+<div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> 
+    <div class="banner">
+        <div class="container text-capitalize w-75 p-5 larger shadow h-100 shadow-lg mb-5 rounded">
+            <div class="header-text caption text-white">
+                <h1 class="text-center fw-bold animate__animated animate__bounce animate__repeat-3"><?php echo $pagina ?></h1>

@@ -1,7 +1,7 @@
 <?php
 require_once "modelos/modelo_categoria.php";
 
-$pagina = "Categorias";
+$pagina = "Categoria";
 
 $categorias = obtenerCategorias($conexion);
 

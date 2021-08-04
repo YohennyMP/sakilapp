@@ -13,7 +13,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="actor.php">Actor</a>
+                <a class="nav-link" href="actor.php">Actores</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="categoria.php">categoria</a>

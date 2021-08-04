@@ -1,49 +1,38 @@
-<?php 
+<?php
 include_once "vistas/partes/head.php";
-include_once "vistas/partes/menu.php"; ?>
-<div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div> 
-    <div class="banner">
-        <div class="container text-capitalize col-md-12 w-75 p-5 larger shadow bg-light h-100 shadow-lg p-3 mb-5 bg-white rounded">
-            <div class="text-center">
-                <h1 class="text-center fw-bold animate__animated animate__bounce animate__repeat-3">actores</h1>
+?>
+                <form class="py-5" action="" method="post">
+                    <input type="text" name="actor_id" class="form-control my-1" placeholder="Idioma">
+                    <button type="submit" class="btn btn-primary" name="insertar"><i class="fa fa-save px-2"></i>Guardar</button>
+                </form>
+                <form class="" action="" method="get">
+                    <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                    <button name= "buscar" class="btn btn-primary my-1" type="submit"><i class="fa fa-search px-2"></i>Buscar</button>
+                </form>
+                <div><?php echo $_SESSION['mensaje'] ?? ""; ?></div>
             </div>
-            <form class="py-5" action="actor.php" method="post">
-                <input type="text" name="actor_id" class="form-control my-1" placeholder="Idioma">
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary" name="insertar"><i class="bi bi-save px-2"></i>Guardar</button>
-                </div>
-            </form>
-            <form class="h-25" action="actor.php" method="get">
-                <input name="nombre" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-                <button name= "buscar" class="btn btn-default" type="submit"><i class="bi bi-search px-2"></i>Buscar</button>
-            </form>
-            <div><?php echo $_SESSION['mensaje'] ?? ""; ?></div>
         </div>
     </div>
-        <div class="container bg-default">
+        <div class="container">
         <hr>
         <table class="col-md-12 text-center table table-striped larger shadow">
             <thead class="thead thead-primary text-dark text-capitalize">
             <th scope='col' class="">codigo</th>
             <th scope='col' class="">nombre</th>
             <th scope='col' class="">fecha</th>
+            <th scope='col' class="">acciones</th>
             </thead>
             <tbody class="larger shadow">
             <?php
             while($dato = mysqli_fetch_assoc($resultado)){
                 echo "<tr>
-                    <th scope='row'>{$dato['language_id']}</th>
-                    <th>{$dato['name']}</th>
-                    <th class='overflow-hidden'>{$dato['last_update']}
-                        <i class='bi bi-x p-2 border rounded border-primary text-white bg-primary'></i>
-                        <i class='bi bi-pencil p-2  border rounded border-primary text-white bg-primary'></i>
-                    </th>
+                    <td scope='row'>{$dato['language_id']}</td>
+                    <td>{$dato['name']}</td>
+                    <td class='overflow-hidden'>{$dato['last_update']}</td>
+                    <td>
+                        <i class='ml-5 p-2 fa fa-close justify-content-end border rounded border-dark text-danger'></i>
+                        <i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i>
+                    </td>
                 </tr>";
             }
             ?>
