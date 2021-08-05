@@ -1,7 +1,7 @@
 <?php
 require_once "modelos/modelo_idioma.php";
 
-$pagina = "idioma";
+$pagina = "idiomas";
 $nombre = $_GET['nombre'] ?? "";
 $query = "SELECT * FROM language WHERE name LIKE '%$nombre%'";
 $resultado = mysqli_query($conexion, $query);
