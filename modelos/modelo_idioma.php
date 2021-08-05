@@ -19,3 +19,11 @@ function insertarIdioma($conexion,$data){
     return mysqli_query($conexion,$sql);
 
 }
+
+function eliminarIdioma($conexion, $id){
+
+    $query = "DELETE FROM language WHERE language_id = $id";
+    $resultado = mysqli_query($conexion,$query);
+
+    return $resultado;
+}

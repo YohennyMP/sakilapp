@@ -24,6 +24,7 @@ if(isset($_POST['insertar'])){
         $_SESSION['mensaje'] = 'Datos insertados correctamente';
     } else {
         $_SESSION['mensaje'] = 'Datos no insertados';
+
     }
 }
 require_once "vistas/pais.html.php";

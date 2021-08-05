@@ -31,16 +31,34 @@ try{
 
 if(isset($_GET['eliminar'])){
     $id = $_GET['eliminar'];
-    echo $id;
-    /*
+    /*echo $id;*/
+    
     $eliminar = eliminarActor($conexion, $id);
 
     if($eliminar){
         $_SESSION['mensaje'] = 'Eliminado exitosamente';
     }else{
         $_SESSION['mensaje'] = 'No se pudo eliminar';
-    }*/
+    }
 }
+
+#editar
+if (isset($_GET['editar'])){
+
+    $id = $_GET['editar'];
+
+    #conseguir la informacion de la base de datos
+    $result = obtenerActoresporId($conexion,$id);
+
+    $info = mysqli_fetch_assoc($result);
+
+    // print_r($info);
+
+}
+
+
+
+
 
 if(isset($_GET['buscar'])){
 
