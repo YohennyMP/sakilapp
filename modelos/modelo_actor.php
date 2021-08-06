@@ -7,6 +7,7 @@ function obtenerActores($conexion){
     return mysqli_query($conexion,$query);
 
 }
+
 function obtenerActoresporNombre($conexion, $nombre){
     
     $query = "SELECT * FROM actor where first_name LIKE '%$nombre%'";
@@ -28,6 +29,7 @@ function insertarActor($conexion,$data){
     return mysqli_query($conexion,$query);
     
 }
+
 function eliminarActor($conexion, $id){
     $query = "DELETE FROM film_actor WHERE actor_id = $id";
     $resultado = mysqli_query($conexion,$query);
@@ -37,6 +39,17 @@ function eliminarActor($conexion, $id){
 
     return $resultado;
 }
-function actualizarActor($conexion, $nombre){
-    //codigo
+
+function actualizarActor($conexion, $datos){
+
+   $query = "UPDATE actor 
+            SET first_name= '{$datos['nom']}', 
+            last_name= '{$datos['apellido']}'
+            WHERE actor_id = '{$datos['id']}'";
+
+    $resultado = mysqli_query($conexion,$query);
+
+    return $resultado;
+
+
 }
