@@ -5,11 +5,11 @@ $pass = '';
 $bdd = 'sakila';
 
 // Valores de la base de datos 000webhost
-if ( $_SERVER['SERVER_NAME'] == 'xxxxxx.000webhostapp.com' ) {
+if ( $_SERVER['SERVER_NAME'] == 'boleanx.000webhostapp.com' ) {
     $host = "localhost";
-    $user = "xxx";
-    $pass = "xxx";
-    $bdd = "xxx";
+    $user = "id17320107_root";
+    $pass = '5Ojx/{$+~\7A\teg';
+    $bdd = "id17320107_sakila";
 }
 
 $conexion = mysqli_connect($host,$user,$pass,$bdd);
