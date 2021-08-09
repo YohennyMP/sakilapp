@@ -4,6 +4,14 @@ $user = 'root';
 $pass = '';
 $bdd = 'sakila';
 
+// Valores de la base de datos 000webhost
+if ( $_SERVER['SERVER_NAME'] == 'xxxxxx.000webhostapp.com' ) {
+    $host = "localhost";
+    $user = "xxx";
+    $pass = "xxx";
+    $bdd = "xxx";
+}
+
 $conexion = mysqli_connect($host,$user,$pass,$bdd);
 
 if(!$conexion){
