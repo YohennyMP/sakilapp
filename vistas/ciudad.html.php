@@ -28,13 +28,13 @@ include_once "vistas/partes/head.php";
             <?php
             while($dato = mysqli_fetch_assoc($resultado)){
                 echo "<tr>
-                    <td scope='row'>{$dato[actor_id]}</td>
-                    <td>{$dato[first_name]}</td>
-                    <td>{$dato[last_name]}</td>
-                    <td class='overflow-hidden'>{$dato[last_update]}</td>
+                    <td scope='row'>{$dato['city_id']}</td>
+                    <td>{$dato['city']}</td>
+                    <td>{$dato['country_id']}</td>
+                    <td class='overflow-hidden'>{$dato['last_update']}</td>
                     <td>
-                        <a href='actores.php?editar={$dato['actor_id']}'><i class='p-2 fa fa-close border rounded border-dark text-danger'></i></a>
-                        <a href='actores.php?eliminar={$dato['actor_id']}'><i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i></a>
+                        <a href='ciudad.php?eliminar={$dato['actor_id']}'><i class='p-2 fa fa-close border rounded border-dark text-danger'></i></a>
+                        <a href='ciudad.php?editar={$dato['actor_id']}'><i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i></a>
                     </td>
                 </tr>";
             }

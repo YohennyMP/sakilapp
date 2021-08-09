@@ -1,4 +1,5 @@
 <?php
+$pagina = "peliculas";
 require_once "modelos/modelo_pelicula.php";
 
 $pagina = "pelicula";

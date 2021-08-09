@@ -30,9 +30,9 @@ include_once "vistas/partes/head.php";
                     <td>{$dato['name']}</td>
                     <td class='overflow-hidden'>{$dato['last_update']}</td>
                     <td>
-                        <i class='ml-5 p-2 fa fa-close justify-content-end border rounded border-dark text-danger'></i>
-                        <i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i>
-                    </td>
+                    <a href='idioma.php?eliminar={$dato['language_id']}'><i class='p-2 fa fa-close border rounded border-dark text-danger'></i></a>
+                    <a href='idioma.php?editar={$dato['language_id']}'><i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i></a>
+                </td>
                 </tr>";
             }
             ?>
