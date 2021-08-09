@@ -29,18 +29,20 @@ try{
     $_SESSION['mensaje'] = $e->getMessage();
 }
 
-if(isset($_GET['eliminar'])){
-    $id = $_GET['eliminar'];
-    echo $id;
-    /*
+/*if(isset($_GET['eliminar'])){
+    echo $_GET;
+
+    $id = $_GET['actor_id'];
+
     $eliminar = eliminarActor($conexion, $id);
 
     if($eliminar){
         $_SESSION['mensaje'] = 'Eliminado exitosamente';
     }else{
         $_SESSION['mensaje'] = 'No se pudo eliminar';
-    }*/
-}
+    }
+
+}*/
 
 if(isset($_GET['buscar'])){
 

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
+<body class="w-100">
 <?php
 include_once "vistas/partes/menu.php"; ?>
 <div id="preloader">

@@ -21,13 +21,13 @@
     }
     </style>
     <footer>
-      <div class="text-white text-center text-uppercase">
-      <h3>visita nuestras redes sociales</h3>
-      <i class="fa fa-facebook p-3"><a href="#"></a></i>
-      <i class="fa fa-instagram p-3"><a href="#"></a></i>
-      <i class="fa fa-twitter p-3"><a href="#"></a></i>
+      <div class="text-center text-uppercase p-5">
+      <h5 class="text-white">visita nuestras redes sociales</h5>
+      <a href="#"><i class="fa fa-facebook p-4 text-white"></i></a>
+      <a href="#"><i class="fa fa-instagram p-4 text-white"></i></a>
+      <a href="#"><i class="fa fa-twitter p-4 text-white"></i></a>
     </div>
-    <p class="col-md-12 text-white text-center text-capitalize">todos los derechos reservados &copy</p>
+    <p class="w-100 text-white text-center text-capitalize">Copyright &copy 2021 sakila - created by Yohenny mozquea & Gabriel vialet.</p>
     </footer>
   </body>
 </html>

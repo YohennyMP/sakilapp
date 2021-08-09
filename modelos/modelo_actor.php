@@ -20,6 +20,7 @@ function insertarActor($conexion,$data){
     
 }
 function eliminarActor($conexion, $id){
+
     $query = "DELETE FROM film_actor WHERE actor_id = $id";
     $resultado = mysqli_query($conexion,$query);
 
@@ -27,7 +28,9 @@ function eliminarActor($conexion, $id){
     $resultado = mysqli_query($conexion,$query);
 
     return $resultado;
+
 }
-function actualizarActor($conexion, $nombre){
-    //codigo
+function actualizarActor($conexion, $data){
+    $query = "UPDATE actor SET first_name = '{$data[nom]}', last_name = '{$data[apellido]}' WHERE actor_id = '{$data[actor_id]}'";
+    $resultado = mysqli_query($conexion, $query);
 }

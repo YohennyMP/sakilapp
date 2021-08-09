@@ -18,10 +18,10 @@ include_once "vistas/partes/head.php";
     <div class="container">
         <table class="text-center table table-striped larger shadow w-100">
             <thead class="text-dark text-capitalize">
-            <th scope='col'>codigo</th>
+            <th scope='col'>#</th>
             <th scope='col'>nombre</th>
             <th scope='col'>apellido</th>
-            <th scope='col'>fecha</th>
+            <th scope='col'>ult. modificacion</th>
             <th scope='col'>acciones</th>
             </thead>
             <tbody>
@@ -33,8 +33,8 @@ include_once "vistas/partes/head.php";
                     <td>{$dato['last_name']}</th>
                     <td>{$dato['last_update']}</td>
                     <td>
-                        <a href='actores.php?editar={$dato['actor_id']}'><i class='p-2 fa fa-close border rounded border-dark text-danger'></i></a>
-                        <a href='actores.php?eliminar={$dato['actor_id']}'><i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i></a>
+                        <a href='actores.php?eliminar={$dato['actor_id']}'><i class='p-2 fa fa-close border rounded border-dark text-danger'></i></a>
+                        <a href='actores.php?editar={$dato['actor_id']}'><i class='p-2 fa fa-pencil border rounded border-dark text-dark'></i></a>
                     </td>
                 </tr>";
             }
