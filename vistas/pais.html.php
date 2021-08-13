@@ -1,4 +1,4 @@
-<?php require_once 'vistas/parte/head.php'; require_once 'vistas/parte/menu.php';?>
+<?php require_once 'vistas/partes/head.php'; require_once 'vistas/partes/menu.php';?>
 
 <div class="centrar">
     <div class="container">
@@ -64,4 +64,4 @@
     </div>
 </div>
 
-<?php require_once 'vistas/parte/foot.php'; ?>
+<?php require_once 'vistas/partes/foot.php'; ?>

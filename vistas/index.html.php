@@ -48,23 +48,27 @@ include_once "vistas/partes/menu.php"; ?>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="service-item">
-                <a href="index.html"> <i class="fa fa-user"></i>
+                <a href="actor.php"> <i class="fa fa-user"></i>
                 <h4>Actores</h4> </a>
                 <p>Registro y visualizacion de actores que participan en las peliculas.</p>
               </div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="service-item">
-                <i class="fa fa-camera"></i>
-                <a href="index.html"> </a><h4>Peliculas</h4>
+                <a href="pelicula.php">
+                  <i class="fa fa-camera"></i>
+                  <h4>Peliculas</h4>
+                </a>
                 <p>Vease un listado de peliculas a su disposicion.</p> </a>
               </div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="service-item">
+              <a href="tienda.php">
                 <i class="bi bi-pin"></i>
                 <h4>ubicanos</h4>
                 <p>Diferentes localizaciones en todos los lugares disponibles.</p>
+              </a>
               </div>
             </div>
           </div>

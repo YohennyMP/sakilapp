@@ -34,7 +34,7 @@ try{
         }
                 
        
-        refrezcar("pais.php");
+        
     }
 
     if (isset($_GET['eliminar'])) {
@@ -63,7 +63,7 @@ try{
         //     $_SESSION['mensaje'] = "No se puede editar";
         // }
     }
-    
+    refrezcar("pais.php");
 }catch(Exception $ex){
     $_SESSION['mensaje'] = $ex->getMessage();
 }
