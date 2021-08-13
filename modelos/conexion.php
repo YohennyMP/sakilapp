@@ -1,7 +1,7 @@
 <?php 
 $host = '127.0.0.1';
 $user = 'root';
-$pass = '';
+$pass = '12345678';
 $bdd = 'sakila';
 
 // Valores de la base de datos 000webhost
