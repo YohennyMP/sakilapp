@@ -10,8 +10,7 @@ include_once "vistas/partes/head.php";
 
                 <button type="submit" class="btn btn-primary mb-1" name="insertar"><i class="fa fa-save pr-2"></i>Guardar</button>
 
-                    <input type="hidden" name="id"
-                        value="<?php echo $info['actor_id'] ?? ''; ?>">
+                    <input type="hidden" name="id" value="<?php echo $info['actor_id'] ?? ''; ?>">
 
                 </form>
 

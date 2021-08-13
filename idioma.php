@@ -8,26 +8,14 @@ $resultado = mysqli_query($conexion, $query);
 
 $idioma = obtenerIdiomas($conexion);
 
-/*if(isset($_POST['guardar'])){
-
-    $nombre = $_POST['idioma'] ?? "";
-
-    $insertado = insertarIdioma($conexion,$nombre);
-
-    if($insertado){
-        $_SESSION['mensaje'] = 'Insercion correcta';
-    }
-}*/
-
 try{
     if(isset($_POST['insertar'])){
-        $nom = $_POST['nom'] ?? "";
-        $apellido = $_POST['apellido'] ?? "";
+        $pais = $_POST['pais'] ?? "";
 
         if(empty($nom)){
-            throw new Exception("el nombre no puede estar vacio");
+            throw new Exception("el pais no puede estar vacio");
         }
-        $data = compact('nom', 'apellido');
+        $data = compact('pais');
         $insertado = insertarActor($conexion,$data);
 
         if($insertado){
@@ -42,7 +30,6 @@ try{
 
 if(isset($_GET['eliminar'])){
     $id = $_GET['eliminar'];
-    /*echo $id;*/
     
     $eliminar = eliminarActor($conexion, $id);
 
@@ -53,24 +40,11 @@ if(isset($_GET['eliminar'])){
     }
 }
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
 if(isset($_GET['buscar'])){
 
     $nombre = $_GET['nombre'];
 
-    $resultado = obtenerIdiomas($conexion,$nombre);
+    $resultado = 'obtenerPaises'($conexion,$nombre);
 
     return $resultado;
 }

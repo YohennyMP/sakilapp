@@ -1,30 +1,70 @@
 <?php
-require_once "modelos/modelo_pais.php";
+require_once 'modelos/modelo_pais.php';
 
-$pagina = "Paises";
+$pagina = 'Pais';
 
-$paises = obtenerPaises($conexion);
+$resultado = obtenerpais($conexion);
 
-if(isset($_GET['buscar'])){
-    $nombre = $_GET['nombre'] ?? "";
-    $paises = obtenerPaisesporNombre($conexion,$nombre);
+try{
+    if (isset($_POST['insetar'])) {
+        $nombre = $_POST['nom'] ?? "";
+        $id = $_POST['id'] ?? "";
 
-    var_dump($paises);
-}
+        $datos = compact('nom');
 
-if(isset($_POST['insertar'])){
-    
-    $pais = $_POST['pais'] ?? "";
-    
-    $datos = compact('pais');
 
-    $insertado = insertarPais($conexion,$datos);
+        
+        $datos = compact('nom');
+        #si el id esta vacio, se va a insertar
+        if(empty($id)){
+            $inser = insertarPais($conexion, $datos);
+            
+            if ($inser){
+            $_SESSION['mensaje'] = 'Datos guardados correctamente';
+            }
+        } else{
+            # de lo contrario, se actualizara
+            $datos['id'] = $id;
 
-    if ($insertado) {
-        $_SESSION['mensaje'] = 'Datos insertados correctamente';
-    } else {
-        $_SESSION['mensaje'] = 'Datos no insertados';
+            $actualizado = editarPaisPorID($conexion, $datos);
 
+            if($actualizado){
+                $_SESSION['mensaje'] = "Datos actualizado correctamente";
+            }
+        }
+                
+       
+        refrezcar("pais.php");
     }
+
+    if (isset($_GET['eliminar'])) {
+        $id = $_GET['eliminar']; 
+               
+        $eliminar = eliminarPais($conexion, $id);
+
+        // if ($eliminado){
+        //     $_SESSION['mensaje'] = "Eliminado Correctamente";
+        // }
+        // else {
+        //     $_SESSION['mensaje'] = "No se puede eliminado";
+        // }
+        refrezcar("pais.php");
+    }
+    if (isset($_GET['editar'])){
+        $id = $_GET['editar'];
+
+        $result = obtenerPaisPorID($conexion, $id);
+
+        $info = mysqli_fetch_assoc($result);
+
+        // if($editar){
+        //     $_SESSION['mensaje'] = "Editado correctamente";
+        // } else{
+        //     $_SESSION['mensaje'] = "No se puede editar";
+        // }
+    }
+    
+}catch(Exception $ex){
+    $_SESSION['mensaje'] = $ex->getMessage();
 }
-require_once "vistas/pais.html.php";
+require_once 'vistas/pais.html.php';

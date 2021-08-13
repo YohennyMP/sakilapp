@@ -1,25 +1,48 @@
-<?php 
-include_once "conexion.php";
-function obtenerPaises($conexion){
-    $query = "SELECT * FROM country";
-    $resultado = mysqli_query($conexion,$query);
-    return $resultado;
-}
-function obtenerPaisesporNombre($conexion, $nombre){
-    $query = "SELECT * FROM country WHERE country LIKE '%$nombre%'";
-    $resultado = mysqli_query($conexion,$query);
-    return $resultado;
+<?php
 
-}
-function insertarPais($conexion,$datos){
-    $query = "INSERT INTO country(country) 
-    VALUES('{$datos['pais']}')";
-    $resultado = mysqli_query($conexion,$query);
+require_once "modelos/conexion.php";
+
+function obtenerpais($conexion) {
+    $query = "SELECT * FROM country";
+
+    $resultado = mysqli_query($conexion, $query);
+
     return $resultado;
 }
-function borrarPais($conexion, $nombre){
-    //codigo
+
+function insertarPais($conexion, $datos){
+    $query = "INSERT INTO country(country) 
+              VALUES ('{$datos['nom']}')";
+
+    $resultado = mysqli_query($conexion, $query);
+    
+    return $resultado;
 }
-function actualizarPais($conexion, $nombre){
-    //codigo
+
+function eliminarPais($conexion, $id){
+    $query = "DELETE FROM country WHERE country_id = $id";
+
+    $resultado = mysqli_query($conexion, $query);
+
+    return $resultado;
+}
+
+
+function obtenerPaisPorID($conexion, $id){
+    $query = "SELECT * FROM country WHERE country_id = $id";
+    
+    $resultado = mysqli_query($conexion, $query);
+    
+    return $resultado;
+}
+
+
+function editarPaisPorID($conexion, $datos){
+    $query = "UPDATE country
+    SET country = '{$datos['nom']}'
+    WHERE country_id = '{$datos['id']}'";
+
+    $resultado = mysqli_query($conexion, $query);
+    
+    return $resultado;
 }
